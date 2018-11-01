@@ -18,7 +18,6 @@
     </title>
 </head>
 
-
 <body>
 {# 头部#}
 {% block header %}
@@ -36,7 +35,33 @@
 
 {# 尾部#}
 {% block footer %}
-    <footer>尾部</footer>
+    <footer>
+        <a href="{% url 'axf:home' %}">
+        <dl>
+            <dt class="home"><span></span></dt>
+            <dd>首页</dd>
+        </dl>
+    </a>
+    <a href="{% url 'axf:market' %}">
+        <dl>
+            <dt class="market"><span></span></dt>
+            <dd>闪购超市</dd>
+        </dl>
+    </a>
+    <a href="{% url 'axf:cart' %}">
+        <dl>
+            <dt class="cart"><span></span></dt>
+            <dd>购物车</dd>
+        </dl>
+    </a>
+<a href="{% url 'axf:mine' %}">
+        <dl>
+            <dt class="mine"><span></span></dt>
+            <dd>我的</dd>
+        </dl>
+    </a>
+
+    </footer>
 {% endblock %}
 
 </body>
@@ -49,5 +74,7 @@
 {# JS#}
 {% block extjs %}
 {% endblock %}
+
+
 
 </html>
