@@ -1,4 +1,6 @@
-
+/*#home{*/
+    /*width: 100%;*/
+/*}*/
 footer .home span {
 	background: url(/static/base/img/home1.png) no-repeat center;
 	background-size: 1.25rem;
@@ -91,6 +93,7 @@ footer .home dd {
     display: flex;
 }
 .shop .shopclass li{
+    /*float: left;*/
     width: 25%;
 }
 .shop .shopclass li a{
@@ -98,6 +101,7 @@ footer .home dd {
 }
 .shop .shopclass li img{
     width:100%;
+    /*float: left;*/
 }
 .shop .shopcommend{
     width: 100%;

@@ -1,6 +1,7 @@
 $(function () {
-    $("#home").width(innerWidth);
 
+    // $("#content").width(innerWidth+20);
+    $("#home").width(innerWidth);
     new Swiper('#topSwiper', {
         effect: 'cube',
         grabCursor: true,

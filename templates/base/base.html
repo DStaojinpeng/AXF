@@ -42,7 +42,7 @@
             <dd>首页</dd>
         </dl>
     </a>
-    <a href="{% url 'axf:market' %}">
+    <a href="{% url 'axf:market' 0  0 %}">
         <dl>
             <dt class="market"><span></span></dt>
             <dd>闪购超市</dd>
@@ -71,6 +71,7 @@
 <script src="{% static 'base/js/bootstrap.js' %}"></script>
 <script src="{% static 'base/js/swiper.js' %}"></script>
 <script src="{% static 'base/js/base.js' %}"></script>
+<script src="{% static 'base/js/jquery.cookie.js' %}"></script>
 {# JS#}
 {% block extjs %}
 {% endblock %}
