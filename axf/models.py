@@ -94,6 +94,16 @@ class Goods(models.Model):
         db_table = "axf_goods"
 
 
+class User(models.Model):
 
+    username = models.CharField(max_length=20)
+    account = models.CharField(max_length=20)
+    password = models.CharField(max_length=256)
+    tel = models.CharField(max_length=20,unique=True)
+    headimg = models.CharField(max_length=30)
+    token = models.CharField(max_length=256,unique=True)
+    addr = models.CharField(max_length=200)
 
+    class Meta():
+        db_table = " axf_user"
 

@@ -1,0 +1,9 @@
+#content .register{
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    left: 15%;
+}
+#content .register input{
+    margin: 0.3em;
+}
