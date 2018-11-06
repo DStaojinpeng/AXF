@@ -97,12 +97,13 @@ class Goods(models.Model):
 class User(models.Model):
 
     username = models.CharField(max_length=20)
-    account = models.CharField(max_length=20)
+    account = models.CharField(max_length=20,unique=True)
     password = models.CharField(max_length=256)
     tel = models.CharField(max_length=20,unique=True)
     headimg = models.CharField(max_length=30)
-    token = models.CharField(max_length=256,unique=True)
+    token = models.CharField(max_length=256)
     addr = models.CharField(max_length=200)
+    rank = models.IntegerField(default=0)
 
     class Meta():
         db_table = " axf_user"

@@ -28,10 +28,11 @@
                         </a>
                     {% endif %}
                 </p>
-                <span><i class="glyphicon glyphicon-align-center"></i>   等级</span>
+                <span><i class="glyphicon glyphicon-align-center"></i>   等级 {{ rank }}</span>
                 <p class="register">
-                    {% if register %}
-                    <a href="{% url 'axf:register' %}">   注册</a>
+                    {% if username %}
+                    {% else %}
+                     <a href="{% url 'axf:register' %}">   注册</a>
                     {% endif %}
                 </p>
             </div>
@@ -44,10 +45,10 @@
         {#        其他#}
         {% if username %}
             <div class="other">
-            <div class="my">
+            <section class="my">
                 <span>我的订单</span>
                 <a href="">查看全部订单 <i class="glyphicon glyphicon-chevron-right"></i></a>
-            </div>
+            </section>
             <section>
                 <ul>
                     <li>

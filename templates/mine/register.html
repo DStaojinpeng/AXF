@@ -3,23 +3,86 @@
 {% block extcss %}
     <link rel="stylesheet" href="{% static 'mine/css/register.css' %}">
 {% endblock %}
+{% block extjs %}
+    <script src="{% static 'mine/js/register.js' %}"></script>
+{% endblock %}
 
 
 {% block content %}
     <div class="register">
-        {% if check %}
-            <p>{{ check }}</p>
-        {% endif %}
-        <form action="{% url "axf:register" %}" method="post" enctype="multipart/form-data">
+        <div class="back">
+            <a href="" class="glyphicon glyphicon-remove"></a>
+        </div>
+        <form class="form-inline" method="post" enctype="multipart/form-data" action="{% url 'axf:register' %}">
             {% csrf_token %}
-            <div><span>账号</span>:<input type="text" placeholder="账号长度为6～12个字符" name="account"></div>
-            <div><span>密码</span>:<input type="password" placeholder="密码长度为6～12个字符" name="password"></div>
-            <div><span>密码</span>:<input type="password" placeholder="重复密码" name="repassword"></div>
-            <div><span>昵称</span>:<input type="text" name="username"></div>
-            <div><span>电话</span>:<input type="text" name="tel"></div>
-            <div><span>地址</span>:<input type="text" name="addr"></div>
-            <div><span>头像</span>:<input type="file" name="headimg"></div>
-            <div><p></p><input type="submit" value="注册"></div>
+{#            账号#}
+            <div class="form-group has-feedback" id="account">
+                <div class="input-group">
+                    <b class="input-group-addon">账号</b>
+                    <input type="text" class="form-control" name="account" placeholder="6~12位 数字、字母或下划线">
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <i></i>
+            </div>
+{#            密码#}
+            <div class="form-group has-feedback" id="password">
+                <div class="input-group">
+                    <b class="input-group-addon">密码</b>
+                    <input type="password" class="form-control" name="password" placeholder="6~12位 数字、字母或下划线">
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <i></i>
+            </div>
+{#            重复输入密码#}
+            <div class="form-group has-feedback" id="repassword">
+                <div class="input-group">
+                    <b class="input-group-addon">密码</b>
+                    <input type="password" class="form-control" name="repassword" placeholder="请重复输入密码">
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <i></i>
+            </div>
+{#            昵称#}
+            <div class="form-group has-feedback" id="name">
+                <div class="input-group">
+                    <b class="input-group-addon">昵称</b>
+                    <input type="text" class="form-control" name="username" placeholder="用户名">
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <i></i>
+            </div>
+{#            手机#}
+            <div class="form-group has-feedback" id="tel">
+                <div class="input-group">
+                    <b class="input-group-addon">手机</b>
+                    <input type="text" class="form-control" name="tel" placeholder="11位号码">
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <i></i>
+            </div>
+{#            地址#}
+            <div class="form-group has-feedback">
+                <div class="input-group">
+                    <b class="input-group-addon">地址</b>
+                    <input type="text" class="form-control" name="addr" placeholder="默认收货地址">
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <i></i>
+            </div>
+{#            头像#}
+            <div class="form-group has-feedback">
+                <div class="input-group">
+                    <b class="input-group-addon">头像</b>
+                    <input type="file" name="headimg">
+                </div>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <i></i>
+            </div>
+{#            注册#}
+                <div  id="subButton">
+                    <input type="submit" class="form-control"
+                           value="注册">
+                </div>
         </form>
     </div>
 {% endblock %}

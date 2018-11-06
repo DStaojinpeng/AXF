@@ -5,6 +5,7 @@ import time
 import uuid
 
 from django.db.models import Q
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -69,22 +70,20 @@ def cart(request):  # 购物车
 
 
 def mine(request):  # 我的
-    token = request.COOKIES.get('token')
-    user_list = User.objects.filter(token=token)
-    if user_list.exists():
-        user = user_list.first()
-        username = user.username
-        headimg = user.headimg
+    token = request.session.get('token')
+    if token:
+        user = User.objects.get(token=token)
         data = {
-            "username": username,
-            "headimg": headimg,
+            'rank': user.rank,
+            'username': user.username,
+            'headimg': user.headimg,
         }
-        print(headimg)
         return render(request, 'mine/mine.html', context=data)
-
     else:
         data = {
-            "register": True
+            'rank': '无',
+            'username': '',
+            'headimg': '',
         }
         return render(request, 'mine/mine.html', context=data)
 
@@ -100,39 +99,23 @@ def register(request):
     if request.method == "GET":
         return render(request, 'mine/register.html')
     elif request.method == "POST":
-        account = request.POST.get("account")
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        repassowrd = request.POST.get("repassword")
-        tel = request.POST.get("tel")
-        addr = request.POST.get("addr")
+        user = User()
+        user.username = request.POST.get("username")
+        user.password = generate_password(request.POST.get("password"))
+        user.account = request.POST.get("account")
         file = request.FILES.get('headimg')
-        user_list = User.objects.filter(Q(account=account), Q(tel=tel))
-        if user_list.exists() or password != repassowrd:
-            data = {
-                "check": "用户名已存在/密码输入错误"
-            }
-            return render(request, 'mine/register.html', context=data)
-        else:
-            # print(account,username, password, addr, file.name)
-            filename = str(random.randrange(1, 100)) + '-' + file.name
-            filepath = os.path.join(settings.MEDIA_ROOT, filename)
-            with open(filepath, 'wb') as fb:
-                for item in file.chunks():
-                    fb.write(item)
-            password = generate_password(password)
-            user = User()
-            user.username = username
-            user.password = password
-            user.account = account
-            user.addr = addr
-            user.headimg = 'headimg/' + filename
-            user.tel = tel
-            user.token = uuid.uuid3(uuid.uuid4(), username)
-            response = redirect("axf:mine")
-            response.set_cookie('token', user.token)
-            user.save()
-            return response
+        filename = str(user.username) + ".png"
+        filepath = os.path.join(settings.MEDIA_ROOT, filename)
+        with open(filepath, 'wb') as fb:
+            for item in file.chunks():
+                fb.write(item)
+        user.addr = request.POST.get("addr")
+        user.headimg = 'headimg/' + filename
+        user.tel = request.POST.get("tel")
+        user.token = str(uuid.uuid5(uuid.uuid4(), 'register'))
+        user.save()
+        request.session['token'] = user.token
+        return redirect("axf:mine")
 
 
 def login(request):
@@ -141,28 +124,74 @@ def login(request):
     elif request.method == "POST":
         account = request.POST.get("account")
         password = request.POST.get('password')
-        user_list = User.objects.filter(account=account)
-        if user_list.exists():
-            user = user_list.first()
-            password = generate_password(password)
-            if password == user.password:
-                response = redirect("axf:mine")
-                response.set_cookie('token',user.token)
-                return response
+        print(account)
+        try:
+            user = User.objects.get(account=account)
+            if user.password == generate_password(password):
+                user.token = str(uuid.uuid5(uuid.uuid4(), 'login'))
+                request.session['token'] = user.token
+                user.save()
+                return redirect('axf:mine')
             else:
-                data = {
-                    "check":"密码错误"
-                }
-                return render(request,'mine/login.html',context=data)
-        else:
-            data = {
-                "check": "用户不存在"
-            }
-            return render(request,'mine/login.html',context=data)
-    return render(request, 'mine/mine.html')
+                return render(request,'mine/login.html',context={'passwordErr':"密码错误!"})
+        except:
+            return render(request,'mine/login.html',context={'accountErr':'账号不存在'})
+
+    #     user_list = User.objects.filter(account=account)
+    #     if user_list.exists():
+    #         user = user_list.first()
+    #         password = generate_password(password)
+    #         if password == user.password:
+    #             response = redirect("axf:mine")
+    #             response.set_cookie('token',user.token)
+    #             return response
+    #         else:
+    #             data = {
+    #                 "check":"密码错误"
+    #             }
+    #             return render(request,'mine/login.html',context=data)
+    #     else:
+    #         data = {
+    #             "check": "用户不存在"
+    #         }
+    #         return render(request,'mine/login.html',context=data)
+    # return render(request, 'mine/mine.html')
 
 
 def logout(request):
-    response = redirect('axf:mine')
-    response.delete_cookie('token')
-    return response
+    request.session.flush()
+    return render(request, 'mine/mine.html')
+
+
+def chackAccount(request):
+    account = request.GET.get("account")
+    JsonData = {
+        'content': "账号可以使用",
+        'status': 1
+    }
+    try:
+        user = User.objects.get(account=account)
+        JsonData = {
+            'content': "账号已存在!",
+            'status': -1
+        }
+        return JsonResponse(JsonData)
+    except:
+        return JsonResponse(JsonData)
+
+
+def chacktel(request):
+    tel = request.GET.get('tel')
+    JsonData = {
+        'content': "手机号可以使用",
+        'status': 1
+    }
+    try:
+        user = User.objects.get(tel=tel)
+        JsonData = {
+            'content': "手机号已存在!",
+            'status': -1
+        }
+        return JsonResponse(JsonData)
+    except:
+        return JsonResponse(JsonData)
