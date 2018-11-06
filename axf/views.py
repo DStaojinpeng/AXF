@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from Python1809AXF import settings
-from axf.models import Wheel, Nav, Mustbuy, Shop, Mainshow, Foodtype, Goods, User
+from axf.models import Wheel, Nav, Mustbuy, Shop, Mainshow, Foodtype, Goods, User, Cart
 
 
 def home(request):  # 首页
@@ -55,18 +55,39 @@ def market(request, childcid, sortid):  # 闪购超市
             'childid': arr[1],
         }
         childcidList.append(dir)
+    # data = {
+    #     "foodtypes": foodtypes,
+    #     "goods": goods,
+    #     'childcidList': childcidList,
+    #     'childcid': childcid,
+    #     'sortid': sortid,
+    # }
+    token = request.session.get('token')
+    carts = []
+    if token:
+        user = User.objects.get(token=token)
+        carts = Cart.objects.filter(user=user).exclude(number=0)
+
     data = {
         "foodtypes": foodtypes,
         "goods": goods,
         'childcidList': childcidList,
         'childcid': childcid,
         'sortid': sortid,
+        'carts':carts,
     }
+    print(carts)
     return render(request, 'market/market.html', context=data)
 
 
 def cart(request):  # 购物车
-    return render(request, 'cart/cart.html')
+    token = request.session.get('token')
+    if token:
+        user = User.objects.get(token=token)
+        carts = Cart.objects.filter(user=user).exclude(number=0)
+        return render(request,'cart/cart.html', context={'carts':carts})
+    else:
+        return render(request, 'mine/mine.html')
 
 
 def mine(request):  # 我的
@@ -195,3 +216,39 @@ def chacktel(request):
         return JsonResponse(JsonData)
     except:
         return JsonResponse(JsonData)
+
+
+def addcart(request):
+    token = request.session.get('token')
+    goodsid = request.GET.get('goodsid')
+    if token:
+        user = User.objects.get(token=token)
+        goodsid = Goods.objects.get(pk=goodsid)
+        user_cart = Cart.objects.filter(user=user).filter(goodsid=goodsid)
+        if user_cart.exists():
+            cart = user_cart.first()
+            cart.number = cart.number + 1
+            cart.save()
+            return JsonResponse({'status':1,'number':cart.number})
+        else:
+            cart = Cart()
+            cart.user = user
+            cart.goodsid = goodsid
+            cart.number = 1
+            cart.save()
+            return JsonResponse({'status':1,'number':cart.number})
+
+    else:
+        return JsonResponse({"status":-1,'number':0})
+
+
+def subcart(request):
+
+
+    goodsid = request.GET.get('goodsid')
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    cart = Cart.objects.filter(user=user).filter(goodsid=goodsid).first()
+    cart.number = cart.number - 1
+    cart.save()
+    return JsonResponse({'status':1,"number":cart.number})

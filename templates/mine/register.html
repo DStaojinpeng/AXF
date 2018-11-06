@@ -11,7 +11,7 @@
 {% block content %}
     <div class="register">
         <div class="back">
-            <a href="" class="glyphicon glyphicon-remove"></a>
+            <a href="{% url 'axf:mine' %}" class="glyphicon glyphicon-remove"></a>
         </div>
         <form class="form-inline" method="post" enctype="multipart/form-data" action="{% url 'axf:register' %}">
             {% csrf_token %}

@@ -9,8 +9,11 @@ urlpatterns = [
     url(r'^cart/$', views.cart, name='cart'),   # 购物车
     url(r'^mine/$', views.mine, name='mine'),   # 我的
     url(r'^register/$', views.register, name='register'),
-    url(r'login/$',views.login, name="login"),
-    url(r'logout/$',views.logout, name='logout'),
-    url(r'chackAccount/$',views.chackAccount,name='chackAccount'),
-    url(r'chacktel/$',views.chacktel,name="chacktel"),
+    url(r'^login/$',views.login, name="login"),
+    url(r'^logout/$',views.logout, name='logout'),
+    url(r'^chackAccount/$',views.chackAccount,name='chackAccount'),
+    url(r'^chacktel/$',views.chacktel,name="chacktel"),
+    url(r'^addcart/$',views.addcart,name='addcart'),
+    url(r'^subcart/$',views.subcart,name='subcart'),
+
 ]

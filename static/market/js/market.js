@@ -28,7 +28,55 @@ $(function () {
         sortidbt = !sortidbt;
         sortidbt ? sortViewShow() : sortViewHide()
     });
+    // 商品加
+    // var num = $('.bt-wrapper .num').each().html()
+    $('.bt-wrapper .num').each(function () {
+        var num = parseInt($(this).html())
+        if (num>0)
+        {
+            $(this).show()
+            $(this).prev().show()
+        }
+        else
+        {
+            $(this).hide()
+            $(this).prev().hide()
+        }
+    })
 
+    $('.bt-wrapper .glyphicon-plus').click(function () {
+        var $that = $(this)
+        var goodsid = $that.attr("goodsid")
+        $.get('/addcart/',{'goodsid':goodsid},function (response) {
+            if (response.status == 1)
+            {
+                $that.prev().html(response.number)
+                $that.prev().show().prev().show()
+            }else
+            {
+                window.open(url='/login/',target="_self")
+            }
+            console.log(goodsid)
+            console.log(response)
+        })
+    })
+    // 商品-
+    $('.bt-wrapper .glyphicon-minus').click(function () {
+        $that = $(this)
+        var goodsid = $that.attr('goodsid')
+        $.get('/subcart/',{'goodsid':goodsid},function (response) {
+            console.log(response)
+            if(response.status==1)
+            {
+                $that.next().html(response.number)
+            }
+            if (response.number==0)
+            {
+                 $('.bt-wrapper .num').hide()
+                 $('.bt-wrapper .num').prev().hide()
+            }
+        })
+    })
     function categoryViewShow() {
         sortidbt = false;
         sortViewHide();
@@ -36,7 +84,6 @@ $(function () {
         $("#categoryid i").removeClass("glyphicon glyphicon-triangle-top").addClass('glyphicon glyphicon-triangle-bottom')
 
     }
-
     function categoryViewHide() {
         $(".bounce-view.category-view").hide();
         $("#categoryid i").removeClass("glyphicon glyphicon-triangle-bottom").addClass('glyphicon glyphicon-triangle-top')
