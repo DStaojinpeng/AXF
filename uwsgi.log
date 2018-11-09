@@ -1,0 +1,391 @@
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Nov  7 18:42:22 2018] ***
+compiled with version: 5.4.0 20160609 on 07 November 2018 10:35:46
+os: Linux-4.4.0-117-generic #141-Ubuntu SMP Tue Mar 13 11:58:07 UTC 2018
+nodename: iZwz988p52tbimnv6z2ezrZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/Axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/python3/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/Axf/Python1809AXF
+your processes number limit is 3824
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8010 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:36126 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x10305a0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 312672 bytes (305 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+failed to open python file Python1809AXF/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28191)
+spawned uWSGI worker 1 (pid: 28192, cores: 4)
+spawned uWSGI worker 2 (pid: 28193, cores: 4)
+spawned uWSGI http 1 (pid: 28194)
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Nov  7 18:43:13 2018] ***
+compiled with version: 5.4.0 20160609 on 07 November 2018 10:35:46
+os: Linux-4.4.0-117-generic #141-Ubuntu SMP Tue Mar 13 11:58:07 UTC 2018
+nodename: iZwz988p52tbimnv6z2ezrZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/Axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/python3/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/Axf/Python1809AXF
+your processes number limit is 3824
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8010).
+bind(): Address already in use [core/socket.c line 769]
+Wed Nov  7 18:44:35 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 18:44:35 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 18:44:35 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 18:44:35 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Nov  7 18:45:01 2018] ***
+compiled with version: 5.4.0 20160609 on 07 November 2018 10:35:46
+os: Linux-4.4.0-117-generic #141-Ubuntu SMP Tue Mar 13 11:58:07 UTC 2018
+nodename: iZwz988p52tbimnv6z2ezrZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/Axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/python3/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/Axf/Python1809AXF
+your processes number limit is 3824
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8010 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:33436 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1f725a0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 312672 bytes (305 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+failed to open python file Python1809AXF/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28217)
+spawned uWSGI worker 1 (pid: 28218, cores: 4)
+spawned uWSGI worker 2 (pid: 28219, cores: 4)
+spawned uWSGI http 1 (pid: 28220)
+--- no python application found, check your startup logs for errors ---
+[pid: 28218|app: -1|req: -1/1] 113.88.13.75 () {36 vars in 642 bytes} [Wed Nov  7 18:48:08 2018] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 28219|app: -1|req: -1/2] 113.88.13.177 () {36 vars in 627 bytes} [Wed Nov  7 18:48:08 2018] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 28218|app: -1|req: -1/3] 113.88.13.75 () {36 vars in 648 bytes} [Wed Nov  7 18:53:58 2018] GET /axf => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 28219|app: -1|req: -1/4] 113.88.13.177 () {36 vars in 630 bytes} [Wed Nov  7 18:53:58 2018] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Nov  7 18:55:46 2018] ***
+compiled with version: 5.4.0 20160609 on 07 November 2018 10:35:46
+os: Linux-4.4.0-117-generic #141-Ubuntu SMP Tue Mar 13 11:58:07 UTC 2018
+nodename: iZwz988p52tbimnv6z2ezrZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/Axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/python3/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/Axf/Python1809AXF
+your processes number limit is 3824
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8010).
+bind(): Address already in use [core/socket.c line 769]
+Wed Nov  7 18:57:12 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 18:57:12 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 18:57:12 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 18:57:12 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Nov  7 18:57:27 2018] ***
+compiled with version: 5.4.0 20160609 on 07 November 2018 10:35:46
+os: Linux-4.4.0-117-generic #141-Ubuntu SMP Tue Mar 13 11:58:07 UTC 2018
+nodename: iZwz988p52tbimnv6z2ezrZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/Axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/python3/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/Axf
+your processes number limit is 3824
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8010 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:34423 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1789590
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 312672 bytes (305 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1789590 pid: 28244 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28244)
+spawned uWSGI worker 1 (pid: 28246, cores: 4)
+spawned uWSGI worker 2 (pid: 28247, cores: 4)
+spawned uWSGI http 1 (pid: 28248)
+[pid: 28246|app: 0|req: 1/1] 93.174.93.136 () {28 vars in 427 bytes} [Wed Nov  7 11:03:09 2018] GET http://www.baidu.com/cache/global/img/gs.gif => generated 117 bytes in 20 msecs (HTTP/1.1 404) 3 headers in 101 bytes (1 switches on core 0)
+Wed Nov  7 11:03:49 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 11:03:49 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 11:03:49 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 11:03:49 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 11:03:49 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Nov  7 19:08:09 2018] ***
+compiled with version: 5.4.0 20160609 on 07 November 2018 10:35:46
+os: Linux-4.4.0-117-generic #141-Ubuntu SMP Tue Mar 13 11:58:07 UTC 2018
+nodename: iZwz988p52tbimnv6z2ezrZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/Axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/python3/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/Axf
+your processes number limit is 3824
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8010 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:40680 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1a26590
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 312672 bytes (305 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1a26590 pid: 28304 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28304)
+spawned uWSGI worker 1 (pid: 28306, cores: 4)
+spawned uWSGI worker 2 (pid: 28307, cores: 4)
+spawned uWSGI http 1 (pid: 28308)
+[pid: 28306|app: 0|req: 1/1] 113.88.13.177 () {36 vars in 643 bytes} [Wed Nov  7 11:10:28 2018] GET / => generated 8457 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 28306|app: 0|req: 2/2] 113.88.13.75 () {36 vars in 633 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/css/reset.css => generated 99 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 3)
+[pid: 28306|app: 0|req: 4/3] 113.88.13.177 () {36 vars in 636 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/css/swiper.css => generated 100 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 101 bytes (1 switches on core 1)
+[pid: 28306|app: 0|req: 4/4] 113.88.13.75 () {36 vars in 641 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/css/bootstrap.css => generated 103 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 101 bytes (1 switches on core 2)
+[pid: 28306|app: 0|req: 5/5] 113.88.13.177 () {36 vars in 617 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/js/jquery.js => generated 98 bytes in 0 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 28306|app: 0|req: 6/6] 113.88.13.75 () {36 vars in 622 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/js/bootstrap.js => generated 101 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 101 bytes (1 switches on core 1)
+[pid: 28307|app: 0|req: 4/7] 113.88.13.177 () {36 vars in 613 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/js/base.js => generated 96 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 28307|app: 0|req: 4/8] 113.88.13.75 () {36 vars in 616 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/js/swiper.js => generated 98 bytes in 9 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 2)
+[pid: 28307|app: 0|req: 4/9] 113.88.13.177 () {36 vars in 632 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/css/base.css => generated 98 bytes in 26 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 28307|app: 0|req: 4/10] 113.88.13.75 () {36 vars in 631 bytes} [Wed Nov  7 11:10:28 2018] GET /static/home/css/home.css => generated 98 bytes in 20 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 3)
+[pid: 28306|app: 0|req: 7/11] 113.88.13.75 () {36 vars in 630 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/js/jquery.cookie.js => generated 105 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 101 bytes (1 switches on core 2)
+[pid: 28307|app: 0|req: 5/12] 113.88.13.177 () {36 vars in 613 bytes} [Wed Nov  7 11:10:28 2018] GET /static/home/js/home.js => generated 96 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 28306|app: 0|req: 8/13] 113.88.13.75 () {36 vars in 622 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/js/bootstrap.js => generated 101 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 101 bytes (1 switches on core 2)
+[pid: 28306|app: 0|req: 9/14] 113.88.13.75 () {36 vars in 616 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/js/swiper.js => generated 98 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 3)
+[pid: 28306|app: 0|req: 10/15] 113.88.13.75 () {36 vars in 612 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/js/base.js => generated 96 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 28306|app: 0|req: 11/16] 113.88.13.75 () {36 vars in 630 bytes} [Wed Nov  7 11:10:28 2018] GET /static/base/js/jquery.cookie.js => generated 105 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 101 bytes (1 switches on core 1)
+[pid: 28307|app: 0|req: 6/17] 113.88.13.75 () {36 vars in 612 bytes} [Wed Nov  7 11:10:28 2018] GET /static/home/js/home.js => generated 96 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 2)
+[pid: 28307|app: 0|req: 7/18] 113.88.13.177 () {36 vars in 627 bytes} [Wed Nov  7 11:10:28 2018] GET /favicon.ico => generated 85 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+Wed Nov  7 11:21:33 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17.1 (64bit) on [Wed Nov  7 19:24:33 2018] ***
+compiled with version: 5.4.0 20160609 on 07 November 2018 10:35:46
+os: Linux-4.4.0-117-generic #141-Ubuntu SMP Tue Mar 13 11:58:07 UTC 2018
+nodename: iZwz988p52tbimnv6z2ezrZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/Axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/python3/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/Axf
+your processes number limit is 3824
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x13ae480
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 312672 bytes (305 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x13ae480 pid: 28507 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28507)
+spawned uWSGI worker 1 (pid: 28509, cores: 4)
+spawned uWSGI worker 2 (pid: 28510, cores: 4)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 28510|app: 0|req: 1/1] 184.106.150.218 () {30 vars in 426 bytes} [Wed Nov  7 11:30:57 2018] GET / => generated 74 bytes in 18 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 3)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 28509|app: 0|req: 1/2] 144.48.9.22 () {36 vars in 418 bytes} [Wed Nov  7 12:07:59 2018] GET / => generated 74 bytes in 18 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 2)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+Wed Nov  7 12:39:13 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 12:39:13 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 12:39:13 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Wed Nov  7 12:39:13 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Nov  9 11:19:37 2018] ***
+compiled with version: 5.4.0 20160609 on 07 November 2018 10:35:46
+os: Linux-4.4.0-117-generic #141-Ubuntu SMP Tue Mar 13 11:58:07 UTC 2018
+nodename: iZwz988p52tbimnv6z2ezrZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/Axf
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/python3/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/Axf
+your processes number limit is 3824
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1396480
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 312672 bytes (305 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1396480 pid: 9049 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9049)
+spawned uWSGI worker 1 (pid: 9051, cores: 4)
+spawned uWSGI worker 2 (pid: 9052, cores: 4)
+[pid: 9052|app: 0|req: 1/1] 113.87.162.199 () {42 vars in 814 bytes} [Fri Nov  9 03:19:55 2018] GET /axf/ => generated 8473 bytes in 37 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 9052|app: 0|req: 2/2] 113.87.162.199 () {44 vars in 870 bytes} [Fri Nov  9 03:20:05 2018] GET /axf/ => generated 8473 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 3)
+[pid: 9052|app: 0|req: 3/3] 113.87.162.199 () {44 vars in 891 bytes} [Fri Nov  9 03:20:06 2018] GET /axf/mine/ => generated 5475 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 2)
+[pid: 9052|app: 0|req: 4/4] 113.87.162.199 () {44 vars in 896 bytes} [Fri Nov  9 03:20:08 2018] GET /axf/cart/ => generated 5147 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 9051|app: 0|req: 1/5] 113.87.162.199 () {46 vars in 927 bytes} [Fri Nov  9 03:21:32 2018] GET /axf/cart/ => generated 5147 bytes in 39 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 9051|app: 0|req: 2/6] 113.87.162.199 () {42 vars in 814 bytes} [Fri Nov  9 03:21:55 2018] GET /axf/ => generated 8473 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 3)
+[pid: 9051|app: 0|req: 3/7] 113.87.162.199 () {44 vars in 866 bytes} [Fri Nov  9 03:21:58 2018] GET /axf/cart/ => generated 5147 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 2)
+[pid: 9051|app: 0|req: 4/8] 113.87.162.199 () {44 vars in 871 bytes} [Fri Nov  9 03:21:59 2018] GET /axf/mine/ => generated 5475 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+<QuerySet [<Cart: Cart object>, <Cart: Cart object>, <Cart: Cart object>, <Cart: Cart object>]>
+[pid: 9051|app: 0|req: 5/9] 113.87.162.199 () {44 vars in 883 bytes} [Fri Nov  9 03:22:01 2018] GET /axf/market/0/0/ => generated 10660 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 9051|app: 0|req: 6/10] 113.87.162.199 () {44 vars in 820 bytes} [Fri Nov  9 03:22:06 2018] GET /addcart/?goodsid=496 => generated 82 bytes in 25 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 3)
+[pid: 9051|app: 0|req: 7/11] 113.87.162.199 () {44 vars in 820 bytes} [Fri Nov  9 03:22:07 2018] GET /addcart/?goodsid=496 => generated 82 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 2)
+[pid: 9051|app: 0|req: 8/12] 113.87.162.199 () {44 vars in 877 bytes} [Fri Nov  9 03:22:08 2018] GET /axf/home/ => generated 8473 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 1)
+[pid: 9051|app: 0|req: 9/13] 113.87.162.199 () {44 vars in 871 bytes} [Fri Nov  9 03:22:09 2018] GET /axf/cart/ => generated 5147 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+<QuerySet [<Cart: Cart object>, <Cart: Cart object>, <Cart: Cart object>, <Cart: Cart object>]>
+[pid: 9051|app: 0|req: 10/14] 113.87.162.199 () {44 vars in 883 bytes} [Fri Nov  9 03:22:10 2018] GET /axf/market/0/0/ => generated 10660 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 3)

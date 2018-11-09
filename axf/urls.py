@@ -15,5 +15,12 @@ urlpatterns = [
     url(r'^chacktel/$',views.chacktel,name="chacktel"),
     url(r'^addcart/$',views.addcart,name='addcart'),
     url(r'^subcart/$',views.subcart,name='subcart'),
+    url(r'^change/$',views.change,name='change'),
+    url(r'^changeall/$',views.changeall,name='changeall'),
+    url(r'^order/$',views.order,name='order'),
+    url(r'^orderdetail/(\d+)/$',views.orderdetail,name='orderdetail'),
+    url(r'^notify/$',views.notify,name='notify'),
+    url(r'^result/$',views.result,name='result'),
+    url(r'^pay/$',views.pay,name='pay'),
 
 ]

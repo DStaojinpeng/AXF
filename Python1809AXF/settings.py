@@ -25,7 +25,7 @@ SECRET_KEY = '+-(a8e3&)hkl3)*)=4v9emrzh=7fc*tyhvc_#mo=wpu7)wdlg-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -126,3 +126,4 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/headimg')
+ALIPAY_ROOT = os.path.join(BASE_DIR,'static/key')

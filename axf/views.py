@@ -10,7 +10,8 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from Python1809AXF import settings
-from axf.models import Wheel, Nav, Mustbuy, Shop, Mainshow, Foodtype, Goods, User, Cart
+from alipay import alipay
+from axf.models import Wheel, Nav, Mustbuy, Shop, Mainshow, Foodtype, Goods, User, Cart, Orderdetail, Order
 
 
 def home(request):  # 首页
@@ -241,10 +242,8 @@ def addcart(request):
     else:
         return JsonResponse({"status":-1,'number':0})
 
-
+# 购物车商品数量减
 def subcart(request):
-
-
     goodsid = request.GET.get('goodsid')
     token = request.session.get('token')
     user = User.objects.get(token=token)
@@ -252,3 +251,101 @@ def subcart(request):
     cart.number = cart.number - 1
     cart.save()
     return JsonResponse({'status':1,"number":cart.number})
+
+# 改变单个商品状态
+def change(request):
+    goodsid = request.GET.get('goodsid')
+    goods = Goods.objects.get(pk=goodsid)
+    goods.isselect = not goods.isselect
+    goods.save()
+    if goods.isselect != 1:
+        isselect = 'false'
+    else:
+        isselect = 'true'
+    return JsonResponse({'isselect':isselect,'status':1})
+
+# 全选
+def changeall(request):
+    isselect = request.GET.get('isselect')
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    carts = Cart.objects.filter(user=user)
+    if isselect == '1':
+        isselect = True
+    else:
+        isselect = False
+    for cart in carts:
+        cart.isselect = isselect
+        cart.save()
+    if isselect:
+        isselect="1"
+    else:
+        isselect='0'
+    JsonData = {
+        'status':1,
+        'msg':'全选',
+        'isselect':isselect
+    }
+    return JsonResponse(JsonData)
+
+
+def orderdetail(request,orderid):
+    orderid = Order.objects.get(orderid=orderid)
+    orderdetail_list = Orderdetail.objects.filter(orderid=orderid)
+    total = 0
+    for good in orderdetail_list:
+        num = int(good.number)
+        price = int(good.goods.price)
+        total +=  num*price
+    return render(request,'cart/order.html',context={'goodlist':orderdetail_list,'total':total,'orderid':orderid})
+
+
+def order(request):
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    order = Order()
+    order.user = user
+    order.orderstatus = 1
+    order.orderid = str(int(time.time()))+ str(random.randrange(10000,1000000))
+    order.save()
+    carts = Cart.objects.filter(user=user).filter(isselect=True)
+    for cart in carts:
+        orderdetail = Orderdetail()
+        orderdetail.orderid = order
+        orderdetail.goods = cart.goodsid
+        orderdetail.number = cart.number
+        orderdetail.save()
+
+        cart.delete()
+    JsonData = {
+        'status': 1,
+        'msg':'下单成功',
+        'orderid': order.orderid
+    }
+    return JsonResponse(JsonData)
+
+
+def notify(request):
+    return HttpResponse('支付成功....')
+
+
+def result(request):
+    return redirect('axf:market')
+
+
+def pay(request):
+    orderid = request.GET.get('orderid')
+    orderid = Order.objects.get(orderid=orderid)
+    orderdetail_list = Orderdetail.objects.filter(orderid=orderid)
+    total = 0
+    for good in orderdetail_list:
+        num = int(good.number)
+        price = int(good.goods.price)
+        total += num * price
+    url=alipay.direct_pay(
+        subject='订单号'+orderid.orderid,
+        out_trade_no = orderid.orderid,
+        total_amount=total,
+    )
+    Alipay = 'https://openapi.alipaydev.com/gateway.do?{data}'.format(data=url)
+    return JsonResponse({'status':1,'Alipay':Alipay})

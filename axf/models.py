@@ -89,6 +89,7 @@ class Goods(models.Model):
     dealerid = models.CharField(max_length=20)  # 详情ID
     storenums = models.CharField(max_length=20) # 库存
     productnum = models.CharField(max_length=20) # 销量
+    isselect = models.BooleanField(default=False)
 
     class Meta():
         db_table = "axf_goods"
@@ -117,3 +118,20 @@ class Cart(models.Model):
 
     class Meta():
         db_table = 'axf_cart'
+
+
+class Order(models.Model):
+    user = models.ForeignKey(User)
+    orderstatus = models.IntegerField(default=1)
+    orderid = models.CharField(max_length=256)
+
+    class Meta():
+        db_table = 'axf_order'
+
+class Orderdetail(models.Model):
+    orderid = models.ForeignKey(Order)
+    goods = models.ForeignKey(Goods)
+    number = models.IntegerField(default=1)
+
+    class Meta():
+        db_table = 'axf_orderdetail'

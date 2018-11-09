@@ -56,8 +56,6 @@ $(function () {
             {
                 window.open(url='/login/',target="_self")
             }
-            console.log(goodsid)
-            console.log(response)
         })
     })
     // 商品-
@@ -72,8 +70,8 @@ $(function () {
             }
             if (response.number==0)
             {
-                 $('.bt-wrapper .num').hide()
-                 $('.bt-wrapper .num').prev().hide()
+                 $that.hide()
+                 $that.prev().hide()
             }
         })
     })
